@@ -1,0 +1,31 @@
+.heading {
+  background-image: url('../../images/ashim-d-silva-3Ijt7UkSBYE-unsplash.jpg');
+  background-position: center center;
+  background-size: cover;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.divider {
+  background-color: black;
+}
+
+.body {
+  background-image: url('../../images/cesar-couto-pC2xOplxsVs-unsplash.jpg');
+  background-position: center center;
+  background-size: cover;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.footer {
+  background-image: url('../../images/cesar-couto-pC2xOplxsVs-unsplash.jpg');
+  background-position: center center;
+  background-size: cover;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory;
+}
