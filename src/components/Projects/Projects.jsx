@@ -6,7 +6,7 @@ import {
   Button,
   makeStyles,
 } from '@material-ui/core';
-import './ProjectsGrid.css';
+import './Projects.css';
 
 const projectData = [
   {
@@ -49,14 +49,14 @@ const projectData = [
 
 const useStyles = makeStyles((theme) => ({
   overlayText: {
-    color: '#ffebcd',
+    color: '#e0d8cd',
   },
 }));
 
 function ProjectsGrid() {
   const classes = useStyles();
   return (
-    <>
+    <Box height="100vh" className="slides" p={5}>
       <Typography variant="h5" align="center">
         Here are some of my latest projects.
       </Typography>
@@ -105,7 +105,7 @@ function ProjectsGrid() {
           })}
         </GridList>
       </Box>
-    </>
+    </Box>
   );
 }
 

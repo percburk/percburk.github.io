@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 function Intro() {
   const classes = useStyles();
   return (
-    <>
+    <Box height="100vh" className="slides" p={5}>
       <Grid container>
         <Grid container item xs={6} alignContent="center">
           <Box>
@@ -91,7 +91,7 @@ function Intro() {
           </Box>
         </Grid>
       </Grid>
-    </>
+    </Box>
   );
 }
 
