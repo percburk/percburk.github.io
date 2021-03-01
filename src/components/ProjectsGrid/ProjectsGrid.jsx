@@ -29,7 +29,7 @@ const projectData = [
   },
   {
     title: 'To-Do List',
-    desc: `First larger assignment using Postgres, full CRUD app.`,
+    desc: `First larger assignment using SQL, a full CRUD app.`,
     photo: 'images/isabel-maria-guner-velasco-M3ymaLBPMQ8-unsplash.jpg',
     url: 'https://github.com/percburk/weekend-sql-to-do-list',
   },
@@ -51,46 +51,61 @@ const useStyles = makeStyles((theme) => ({
   overlayText: {
     color: '#ffebcd',
   },
-  button: {
-    color: '#ffebcd',
-    outlineColor: '#ffebcd',
-  },
 }));
 
 function ProjectsGrid() {
   const classes = useStyles();
   return (
-    <Box display="flex" justifyContent="center" py={5}>
-      <GridList cellHeight={250} cols={3} spacing={0}>
-        {projectData.map((item, i) => {
-          return (
-            <GridListTile key={i}>
-              <div className="container">
-                <img src={item.photo} alt={item.title} className="media" />
-                <Box className="overlay">
-                  <Box p={2}>
-                    <Typography
-                      variant="h5"
-                      className={classes.overlayText}
-                      align="center"
-                      gutterBottom
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography className={classes.overlayText} align="center">
-                      {item.desc}
-                    </Typography>
-                    <Button variant="outlined" className={classes.button}>
-                      View
-                    </Button>
+    <>
+      <Typography variant="h5" align="center">
+        Here are some of my latest projects.
+      </Typography>
+      <Box display="flex" justifyContent="center" py={5}>
+        <GridList cellHeight={250} cols={3} spacing={0}>
+          {projectData.map((item, i) => {
+            return (
+              <GridListTile key={i}>
+                <div className="container">
+                  <img src={item.photo} alt={item.title} className="media" />
+                  <Box className="overlay">
+                    <Box p={2}>
+                      <Typography
+                        variant="h5"
+                        className={classes.overlayText}
+                        align="center"
+                        gutterBottom
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        className={classes.overlayText}
+                        align="center"
+                      >
+                        {item.desc}
+                      </Typography>
+                      <Box
+                        display="flex"
+                        justifyContent="center"
+                        paddingTop={2}
+                      >
+                        <Button
+                          variant="outlined"
+                          color="primary"
+                          target="_blank"
+                          href={item.url}
+                        >
+                          View
+                        </Button>
+                      </Box>
+                    </Box>
                   </Box>
-                </Box>
-              </div>
-            </GridListTile>
-          );
-        })}
-      </GridList>
-    </Box>
+                </div>
+              </GridListTile>
+            );
+          })}
+        </GridList>
+      </Box>
+    </>
   );
 }
 

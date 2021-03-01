@@ -10,15 +10,7 @@
   background-color: black;
 }
 
-.body {
-  background-image: url('../../images/cesar-couto-pC2xOplxsVs-unsplash.jpg');
-  background-position: center center;
-  background-size: cover;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.footer {
+.slides {
   background-image: url('../../images/cesar-couto-pC2xOplxsVs-unsplash.jpg');
   background-position: center center;
   background-size: cover;
