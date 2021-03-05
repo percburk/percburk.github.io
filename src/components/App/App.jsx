@@ -1,4 +1,5 @@
-import { Box, ThemeProvider, CssBaseline } from '@material-ui/core';
+import { Link } from 'react-scroll';
+import { Box, ThemeProvider, CssBaseline, makeStyles } from '@material-ui/core';
 // Component imports
 import muiTheme from '../muiTheme/muiTheme.js';
 import Projects from '../Projects/Projects.jsx';
@@ -7,17 +8,57 @@ import Home from '../Home/Home.jsx';
 import Contact from '../Contact/Contact.jsx';
 import './App.css';
 
+const useStyles = makeStyles((theme) => ({
+  navText: {
+    color: '#e0d8cd',
+    marginLeft: theme.spacing(3),
+    cursor: 'pointer',
+  },
+}));
+
 function App() {
+  const classes = useStyles();
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline />
-      <Box height="5vh" className="divider" />
+      <Box className="nav-bar" display="flex" justifyContent="flex-end" p={2}>
+        <Link
+          className={classes.navText}
+          activeClass="active"
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={700}
+        >
+          ABOUT
+        </Link>
+        <Link
+          className={classes.navText}
+          activeClass="active"
+          to="projects"
+          spy={true}
+          smooth={true}
+          duration={700}
+        >
+          PROJECTS
+        </Link>
+        <Link
+          className={classes.navText}
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={700}
+        >
+          CONTACT
+        </Link>
+      </Box>
       <Home />
       <Box height="5vh" className="divider" />
       <About />
       <Box height="5vh" className="divider" />
       <Projects />
-      <Box height="5vh" className="divider"></Box>
+      <Box height="5vh" className="divider" />
       <Contact />
       <Box height="5vh" className="divider" />
     </ThemeProvider>

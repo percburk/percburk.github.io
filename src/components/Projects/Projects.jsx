@@ -53,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ProjectsGrid() {
+function Projects() {
   const classes = useStyles();
   return (
-    <Box height="100vh" className="slides" p={5}>
+    <Box height="100vh" className="slides" p={5} id="projects">
       <Typography variant="h5" align="center">
         Here are some of my latest projects.
       </Typography>
@@ -65,7 +65,7 @@ function ProjectsGrid() {
           {projectData.map((item, i) => {
             return (
               <GridListTile key={i}>
-                <div className="container">
+                <Box className="container">
                   <img src={item.photo} alt={item.title} className="media" />
                   <Box className="overlay">
                     <Box p={2}>
@@ -99,7 +99,7 @@ function ProjectsGrid() {
                       </Box>
                     </Box>
                   </Box>
-                </div>
+                </Box>
               </GridListTile>
             );
           })}
@@ -109,4 +109,4 @@ function ProjectsGrid() {
   );
 }
 
-export default ProjectsGrid;
+export default Projects;

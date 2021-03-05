@@ -1,10 +1,4 @@
-import {
-  Button,
-  Box,
-  IconButton,
-  Typography,
-  makeStyles,
-} from '@material-ui/core';
+import { Box, IconButton, Typography, makeStyles } from '@material-ui/core';
 import { LinkedIn, Instagram, GitHub, Email } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,18 +8,17 @@ const useStyles = makeStyles((theme) => ({
   iconButton: {
     color: 'black',
   },
+  filler: {
+    height: '100%',
+    width: '100%',
+  },
 }));
 
 function Home() {
   const classes = useStyles();
   return (
-    <Box height="100vh" className="heading">
-      <Box display="flex" justifyContent="flex-end" p={3}>
-        <Button>About</Button>
-        <Button>Projects</Button>
-        <Button>Contact</Button>
-      </Box>
-      <Box>
+    <Box height="100vh" className="heading" id="home">
+      <Box paddingTop={10}>
         <Typography variant="h1" align="center" className={classes.title}>
           Kevin Burk
         </Typography>

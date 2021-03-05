@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact() {
   const classes = useStyles();
-  
+
   return (
     <Box
+      id="contact"
       height="100vh"
       className="slides"
       py={5}

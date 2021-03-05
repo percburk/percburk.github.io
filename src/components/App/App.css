@@ -2,8 +2,15 @@
   background-image: url('../../images/ashim-d-silva-3Ijt7UkSBYE-unsplash.jpg');
   background-position: center center;
   background-size: cover;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-snap-align: start;
+  scroll-snap-stop: always; */
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 2;
 }
 
 .divider {
@@ -14,10 +21,10 @@
   background-image: linear-gradient(#86b0dd, #eed2c8);
   background-position: center center;
   background-size: cover;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-snap-align: start;
+  scroll-snap-stop: always; */
 }
 
-.snap-container {
+/* .snap-container {
   scroll-snap-type: y mandatory;
-}
+} */
