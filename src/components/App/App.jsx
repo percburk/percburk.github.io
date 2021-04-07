@@ -21,14 +21,20 @@ function App() {
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline />
-      <Box className="nav-bar" display="flex" justifyContent="flex-end" p={2}>
+      <Box
+        className="nav-bar"
+        display="flex"
+        justifyContent="flex-end"
+        py={1.5}
+        px={3}
+      >
         <Link
           className={classes.navText}
           activeClass="active"
           to="about"
           spy={true}
           smooth={true}
-          duration={700}
+          duration={800}
         >
           ABOUT
         </Link>
@@ -38,7 +44,7 @@ function App() {
           to="projects"
           spy={true}
           smooth={true}
-          duration={700}
+          duration={800}
         >
           PROJECTS
         </Link>
@@ -48,17 +54,17 @@ function App() {
           to="contact"
           spy={true}
           smooth={true}
-          duration={700}
+          duration={800}
         >
           CONTACT
         </Link>
       </Box>
       <Home />
-      <Box height="5vh" className="divider" />
+      <Box height="5vh" className="divider" id="about" />
       <About />
-      <Box height="5vh" className="divider" />
+      <Box height="5vh" className="divider" id="projects" />
       <Projects />
-      <Box height="5vh" className="divider" />
+      <Box height="5vh" className="divider" id="contact" />
       <Contact />
       <Box height="5vh" className="divider" />
     </ThemeProvider>

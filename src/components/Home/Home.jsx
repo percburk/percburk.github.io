@@ -17,12 +17,18 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   const classes = useStyles();
   return (
-    <Box height="100vh" className="heading" id="home">
-      <Box paddingTop={10}>
+    <Box
+      height="100vh"
+      className="heading"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box paddingBottom={8}>
         <Typography variant="h1" align="center" className={classes.title}>
           Kevin Burk
         </Typography>
-        <Box display="flex" justifyContent="center" paddingTop={3}>
+        <Box display="flex" justifyContent="center" paddingTop={6}>
           <IconButton
             className={classes.iconButton}
             target="_blank"

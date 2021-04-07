@@ -14,8 +14,7 @@ function Contact() {
 
   return (
     <Box
-      id="contact"
-      height="100vh"
+      height="95vh"
       className="slides"
       py={5}
       display="flex"

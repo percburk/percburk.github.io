@@ -56,15 +56,15 @@ const useStyles = makeStyles((theme) => ({
 function Projects() {
   const classes = useStyles();
   return (
-    <Box height="100vh" className="slides" p={5} id="projects">
+    <Box height="95vh" className="slides" p={5}>
       <Typography variant="h5" align="center">
         Here are some of my latest projects.
       </Typography>
       <Box display="flex" justifyContent="center" py={5}>
         <GridList cellHeight={250} cols={3} spacing={0}>
-          {projectData.map((item, i) => {
+          {projectData.map((item) => {
             return (
-              <GridListTile key={i}>
+              <GridListTile key={item.title}>
                 <Box className="container">
                   <img src={item.photo} alt={item.title} className="media" />
                   <Box className="overlay">
@@ -80,6 +80,7 @@ function Projects() {
                       <Typography
                         className={classes.overlayText}
                         align="center"
+                        variant="body2"
                       >
                         {item.desc}
                       </Typography>
