@@ -1,4 +1,6 @@
 import { Box, Typography, Button, makeStyles } from '@material-ui/core';
+import linkedIn from '../../images/linkedin.png';
+import email from '../../images/email.png';
 
 const useStyles = makeStyles((theme) => ({
   contactButton: {
@@ -11,8 +13,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact() {
   const classes = useStyles();
-
-  // test here for pr!
 
   return (
     <Box
@@ -31,22 +31,14 @@ function Contact() {
             target="_blank"
             href="https://www.linkedin.com/in/kevin-burk-2020/"
           >
-            <img
-              src="images/LI-In-Bug.png"
-              className={classes.logo}
-              alt="linkedIn"
-            />
+            <img src={linkedIn} className={classes.logo} alt="linkedIn" />
           </Button>
           <Button
             className={classes.contactButton}
             target="_blank"
             href="mailto:kevinmburk@gmail.com"
           >
-            <img
-              src="images/584856a0e0bb315b0f7675a9.png"
-              className={classes.logo}
-              alt="email"
-            />
+            <img src={email} className={classes.logo} alt="email" />
           </Button>
         </Box>
       </Box>

@@ -1,5 +1,8 @@
 import { Box, Typography, makeStyles, Grid } from '@material-ui/core';
 import { ChevronRight } from '@material-ui/icons';
+import profilePic from '../../images/profile_pic.jpeg';
+import codeIcon from '../../images/code_icon.png'
+import ideaIcon from '../../images/idea_icon.png'
 
 const useStyles = makeStyles((theme) => ({
   media: {
@@ -57,11 +60,7 @@ function Intro() {
           justify="center"
           alignItems="center"
         >
-          <img
-            src="images/0FAC769B-31B4-4F52-92BC-916FA2AF3F4F_1_105_c.jpeg"
-            className={classes.media}
-            alt="Kevin Burk"
-          />
+          <img src={profilePic} className={classes.media} alt="Kevin Burk" />
         </Grid>
       </Grid>
       <Box pt={8} pb={4}>
@@ -70,11 +69,7 @@ function Intro() {
       <Grid container>
         <Grid item xs={6}>
           <Box display="flex">
-            <img
-              src="images/noun_code_587999.png"
-              alt="code"
-              className={classes.icon}
-            />
+            <img src={codeIcon} alt="code" className={classes.icon} />
             <Box px={1}>
               <Typography>
                 <b>Technologies</b>
@@ -89,11 +84,7 @@ function Intro() {
         </Grid>
         <Grid item xs={6}>
           <Box display="flex">
-            <img
-              src="images/noun_Idea_1175577.png"
-              className={classes.icon}
-              alt="idea"
-            />
+            <img src={ideaIcon} className={classes.icon} alt="idea" />
             <Box>
               <Typography>
                 <b>Qualities</b>
