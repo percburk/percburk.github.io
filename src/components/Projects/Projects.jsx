@@ -5,7 +5,9 @@ import {
   Typography,
   Button,
   makeStyles,
+  useMediaQuery,
 } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import './Projects.css';
 import pacamara from '../../images/pacamara.jpg';
 import bekome from '../../images/bekome.png';
@@ -29,13 +31,13 @@ const projectData = [
   },
   {
     title: 'Movie Sagas',
-    desc: `First big React project at Prime. Full CRUD app with a database of movies.`,
+    desc: `Gallery of movies with detail view, with the ability to add, edit and delete movies.`,
     url: 'https://github.com/percburk/movie-sagas',
     photo: movieSagas,
   },
   {
     title: 'Gallery of Moments',
-    desc: `First larger assignment using React.`,
+    desc: `Photo gallery using React, conditional rendering, and Material-UI.`,
     url: 'https://github.com/percburk/react-gallery',
     photo: gallery,
   },
@@ -47,7 +49,7 @@ const projectData = [
   },
   {
     title: 'JQuery Calculator',
-    desc: 'Calculator integrating a server running Express and JQuery.',
+    desc: 'Calculator integrating a server running Express with jQuery.',
     url: 'https://github.com/percburk/jquery-server-side-calculator',
     photo: calculator,
   },
@@ -57,17 +59,32 @@ const useStyles = makeStyles((theme) => ({
   overlayText: {
     color: '#e0d8cd',
   },
+  gridList: {
+    maxHeight: 500,
+    overflowY: 'scroll',
+  },
 }));
 
 function Projects() {
   const classes = useStyles();
+  const theme = useTheme();
+  const screenXs = useMediaQuery(theme.breakpoints.only('xs'));
+  const screenSm = useMediaQuery(theme.breakpoints.only('sm'));
+
+  const returnColumns = () => (screenXs ? 1 : screenSm ? 2 : 3);
+
   return (
     <Box height="95vh" className="slides" p={5}>
       <Typography variant="h4" align="center">
         Here are some of my latest projects.
       </Typography>
       <Box display="flex" justifyContent="center" py={6}>
-        <GridList cellHeight={250} cols={3} spacing={0}>
+        <GridList
+          className={classes.gridList}
+          cellHeight={250}
+          cols={returnColumns()}
+          spacing={0}
+        >
           {projectData.map((item) => {
             return (
               <GridListTile key={item.title}>

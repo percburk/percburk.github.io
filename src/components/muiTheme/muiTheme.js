@@ -45,12 +45,6 @@ const muiTheme = createMuiTheme({
       fontWeight: 400,
       letterSpacing: '0.05em',
     },
-    subtitle1: {
-      fontFamily: 'Lato',
-      fontWeight: 300,
-      fontSize: '1.1rem',
-      lineHeight: 1.5,
-    },
     body1: {
       fontFamily: 'Lato',
       fontWeight: 300,
@@ -62,6 +56,12 @@ const muiTheme = createMuiTheme({
       fontWeight: 300,
       fontSize: '1rem',
       lineHeight: 1.8,
+    },
+    subtitle1: {
+      fontFamily: 'Lato',
+      fontWeight: 300,
+      fontSize: '1rem',
+      lineHeight: 1.2,
     },
   },
 });
