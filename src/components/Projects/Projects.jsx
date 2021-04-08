@@ -65,13 +65,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Projects() {
+export default function Projects() {
   const classes = useStyles();
   const theme = useTheme();
   const screenXs = useMediaQuery(theme.breakpoints.only('xs'));
   const screenSm = useMediaQuery(theme.breakpoints.only('sm'));
 
-  const returnColumns = () => (screenXs ? 1 : screenSm ? 2 : 3);
+  const handleColumns = () => (screenXs ? 1 : screenSm ? 2 : 3);
 
   return (
     <Box height="95vh" className="slides" p={5}>
@@ -82,55 +82,47 @@ function Projects() {
         <GridList
           className={classes.gridList}
           cellHeight={250}
-          cols={returnColumns()}
+          cols={handleColumns()}
           spacing={0}
         >
-          {projectData.map((item) => {
-            return (
-              <GridListTile key={item.title}>
-                <Box className="container">
-                  <img src={item.photo} alt={item.title} className="media" />
-                  <Box className="overlay">
-                    <Box p={2}>
-                      <Typography
-                        variant="h5"
-                        className={classes.overlayText}
-                        align="center"
-                        gutterBottom
+          {projectData.map((item) => (
+            <GridListTile key={item.title}>
+              <Box className="container">
+                <img src={item.photo} alt={item.title} className="media" />
+                <Box className="overlay">
+                  <Box p={2}>
+                    <Typography
+                      variant="h5"
+                      className={classes.overlayText}
+                      align="center"
+                      gutterBottom
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      className={classes.overlayText}
+                      align="center"
+                      variant="subtitle1"
+                    >
+                      {item.desc}
+                    </Typography>
+                    <Box display="flex" justifyContent="center" paddingTop={2}>
+                      <Button
+                        variant="outlined"
+                        color="primary"
+                        target="_blank"
+                        href={item.url}
                       >
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        className={classes.overlayText}
-                        align="center"
-                        variant="subtitle1"
-                      >
-                        {item.desc}
-                      </Typography>
-                      <Box
-                        display="flex"
-                        justifyContent="center"
-                        paddingTop={2}
-                      >
-                        <Button
-                          variant="outlined"
-                          color="primary"
-                          target="_blank"
-                          href={item.url}
-                        >
-                          View
-                        </Button>
-                      </Box>
+                        View
+                      </Button>
                     </Box>
                   </Box>
                 </Box>
-              </GridListTile>
-            );
-          })}
+              </Box>
+            </GridListTile>
+          ))}
         </GridList>
       </Box>
     </Box>
   );
 }
-
-export default Projects;

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Contact() {
+export default function Contact() {
   const classes = useStyles();
 
   return (
@@ -24,7 +24,9 @@ function Contact() {
       justifyContent="center"
     >
       <Box>
-        <Typography variant="h2" align="center">Let's get in touch.</Typography>
+        <Typography variant="h2" align="center">
+          Let's get in touch.
+        </Typography>
         <Box display="flex" justifyContent="center" paddingTop={4}>
           <Button
             className={classes.contactButton}
@@ -45,5 +47,3 @@ function Contact() {
     </Box>
   );
 }
-
-export default Contact;

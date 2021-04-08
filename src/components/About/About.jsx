@@ -74,7 +74,7 @@ export default function About() {
   return (
     <Box minHeight="95vh" className="slides" p={7}>
       <Grid container spacing={6}>
-        <Grid item align={alignPic()} sm={12} md={4}>
+        <Grid container item justify={alignPic()} sm={12} md={4}>
           <img src={profilePic} className={classes.media} alt="Kevin Burk" />
         </Grid>
         <Grid container item sm={12} md={8} alignItems="center">

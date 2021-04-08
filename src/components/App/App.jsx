@@ -1,7 +1,7 @@
 import { Link } from 'react-scroll';
 import { Box, ThemeProvider, CssBaseline, makeStyles } from '@material-ui/core';
 // Component imports
-import muiTheme from '../muiTheme/muiTheme.js';
+import { muiTheme } from '../muiTheme/muiTheme.js';
 import Projects from '../Projects/Projects.jsx';
 import About from '../About/About.jsx';
 import Home from '../Home/Home.jsx';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
+export default function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={muiTheme}>
@@ -70,5 +70,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;
