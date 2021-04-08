@@ -1,4 +1,11 @@
-import { Box, Typography, makeStyles, Grid } from '@material-ui/core';
+import {
+  Box,
+  Typography,
+  makeStyles,
+  Grid,
+  useMediaQuery,
+} from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 import { ChevronRight } from '@material-ui/icons';
 import profilePic from '../../images/profile_pic.jpeg';
 import codeIcon from '../../images/code_icon.png';
@@ -6,17 +13,17 @@ import ideaIcon from '../../images/idea_icon.png';
 
 const useStyles = makeStyles((theme) => ({
   media: {
-    height: 300,
-    width: 300,
+    width: 275,
+    height: 275,
     objectFit: 'cover',
     borderRadius: '50%',
     border: '2px solid black',
   },
   icon: {
-    height: 85,
-    width: 85,
+    height: 45,
+    width: 45,
     objectFit: 'contain',
-    marginRight: theme.spacing(4),
+    marginRight: theme.spacing(3),
   },
   bulletChevron: {
     marginRight: theme.spacing(1),
@@ -24,30 +31,53 @@ const useStyles = makeStyles((theme) => ({
   textMargin: {
     marginBottom: theme.spacing(2),
   },
-  skillsTitleMargin: {
-    marginBottom: theme.spacing(2),
+  techList: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'column',
+    maxHeight: 250,
   },
 }));
 
+const tech = [
+  'Javascript',
+  'Typescript',
+  'Python',
+  'HTML',
+  'CSS',
+  'SQL',
+  'React',
+  'Redux-Saga',
+  'Vue',
+  'Vuex',
+  'Node.js',
+  'Express',
+  'Flask',
+  'jQuery',
+  'Git',
+];
+
+const qualities = [
+  `Four years of hospitality management experience.`,
+  `Master's Degree in Percussion Performance.`,
+  `Experience and strong personal investment in a company culture of empathy and inclusivity.`,
+  `Clear communicator, and supportive presence in any team setting.`,
+  `Keen eye for design and passion for front end development.`,
+];
+
 export default function About() {
   const classes = useStyles();
+  const theme = useTheme();
+  const screenSm = useMediaQuery(theme.breakpoints.down('sm'));
+  const alignPic = () => (screenSm ? 'center' : 'left');
+
   return (
-    <Box minHeight="95vh" className="slides" p={8}>
-      <Grid container>
-        <Grid
-          container
-          item
-          xs={12}
-          md={6}
-          display="flex"
-          justify="center"
-          alignItems="center"
-        >
-          <Box p={2}>
-            <img src={profilePic} className={classes.media} alt="Kevin Burk" />
-          </Box>
+    <Box minHeight="95vh" className="slides" p={7}>
+      <Grid container spacing={6}>
+        <Grid item align={alignPic()} sm={12} md={4}>
+          <img src={profilePic} className={classes.media} alt="Kevin Burk" />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid container item sm={12} md={8} alignItems="center">
           <Box>
             <Typography variant="h4" className={classes.textMargin}>
               Hi, I'm Kevin.
@@ -68,60 +98,44 @@ export default function About() {
             </Typography>
           </Box>
         </Grid>
-      </Grid>
-      <Box pt={8} pb={3}>
-        <Typography variant="h4" align="center">
-          Skills
-        </Typography>
-      </Box>
-      <Grid container>
         <Grid item xs={12} md={6}>
-          <Box display="flex" mb={3} alignItems="center">
-            <img src={codeIcon} alt="code" className={classes.icon} />
-            <Box px={1}>
-              <Typography className={classes.skillsTitleMargin}>
-                <b>Technologies</b>
-              </Typography>
-              <Typography variant="body2">
-                Javascript | Typescript | Python
-              </Typography>
-              <Typography variant="body2">HTML | CSS | SQL</Typography>
-              <Typography variant="body2">
-                React | Redux-Saga | Vue | Vuex
-              </Typography>
-              <Typography variant="body2">
-                Node.js | Express | Flask | jQuery | Git
-              </Typography>
-            </Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            className={classes.textMargin}
+          >
+            <img src={ideaIcon} className={classes.icon} alt="idea" />
+            <Typography variant="h5">
+              <b>Qualities</b>
+            </Typography>
+          </Box>
+          <Box px={1}>
+            {qualities.map((item, i) => (
+              <Box key={i} display="flex" alignItems="center" pb={1}>
+                <ChevronRight className={classes.bulletChevron} />
+                <Typography>{item}</Typography>
+              </Box>
+            ))}
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box display="flex" mb={3} alignItems="center">
-            <img src={ideaIcon} className={classes.icon} alt="idea" />
-            <Box>
-              <Typography className={classes.skillsTitleMargin}>
-                <b>Qualities</b>
-              </Typography>
-              <Box display="flex" alignItems="center" pb={1}>
+          <Box
+            display="flex"
+            alignItems="center"
+            className={classes.textMargin}
+          >
+            <img src={codeIcon} alt="code" className={classes.icon} />
+            <Typography variant="h5">
+              <b>Technologies</b>
+            </Typography>
+          </Box>
+          <Box className={classes.techList} px={1}>
+            {tech.map((item, i) => (
+              <Box key={i} display="flex" alignItems="center">
                 <ChevronRight className={classes.bulletChevron} />
-                <Typography variant="subtitle1">
-                  Four years of hospitality management experience.
-                </Typography>
+                <Typography>{item}</Typography>
               </Box>
-              <Box display="flex" alignItems="center" pb={1}>
-                <ChevronRight className={classes.bulletChevron} />
-                <Typography variant="subtitle1">
-                  Master's Degree in Percussion Performance.
-                </Typography>
-              </Box>
-              <Box display="flex" alignItems="center">
-                <ChevronRight className={classes.bulletChevron} />
-                <Typography variant="subtitle1">
-                  Experience and strong personal investment in a company culture
-                  of empathy and inclusivity.
-                </Typography>
-              </Box>
-            </Box>
+            ))}
           </Box>
         </Grid>
       </Grid>

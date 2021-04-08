@@ -1,9 +1,11 @@
 .heading {
-  background-image: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)), url('../../images/gehry.jpg');
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15)
+    ),
+    url('../../images/gehry.jpg');
   background-position: center center;
   background-size: cover;
-  /* scroll-snap-align: start;
-  scroll-snap-stop: always; */
 }
 
 .nav-bar {
@@ -21,10 +23,4 @@
   background-image: linear-gradient(#86b0dd, #eed2c8);
   background-position: center center;
   background-size: cover;
-  /* scroll-snap-align: start;
-  scroll-snap-stop: always; */
 }
-
-/* .snap-container {
-  scroll-snap-type: y mandatory;
-} */

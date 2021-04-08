@@ -103,7 +103,7 @@ function Projects() {
                       <Typography
                         className={classes.overlayText}
                         align="center"
-                        variant="body2"
+                        variant="subtitle1"
                       >
                         {item.desc}
                       </Typography>

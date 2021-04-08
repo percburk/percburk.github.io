@@ -20,7 +20,7 @@ const muiTheme = createMuiTheme({
       fontFamily: 'Lato',
       fontWeight: 200,
       letterSpacing: '0.1em',
-      fontSize: '7rem',
+      fontSize: '6.7rem',
     },
     h2: {
       fontFamily: 'Lato',
@@ -49,19 +49,19 @@ const muiTheme = createMuiTheme({
       fontFamily: 'Lato',
       fontWeight: 300,
       fontSize: '1.2rem',
-      lineHeight: 2,
+      lineHeight: 1.6,
     },
     body2: {
       fontFamily: 'Lato',
       fontWeight: 300,
-      fontSize: '1rem',
+      fontSize: '1.1rem',
       lineHeight: 1.8,
     },
     subtitle1: {
       fontFamily: 'Lato',
       fontWeight: 300,
       fontSize: '1rem',
-      lineHeight: 1.2,
+      lineHeight: 1.5,
     },
   },
 });
