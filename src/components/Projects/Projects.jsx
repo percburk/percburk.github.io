@@ -74,7 +74,7 @@ export default function Projects() {
   const handleColumns = () => (screenXs ? 1 : screenSm ? 2 : 3);
 
   return (
-    <Box height="95vh" className="slides" p={5}>
+    <Box minHeight="95vh" className="slides" p={5}>
       <Typography variant="h4" align="center">
         Here are some of my latest projects.
       </Typography>
