@@ -42,19 +42,23 @@ const useStyles = makeStyles((theme) => ({
 const tech = [
   'Javascript',
   'Typescript',
-  'Python',
+  'C#',
   'HTML',
   'CSS',
-  'SQL',
+  'Sass',
   'React',
   'Redux-Saga',
+  'React Query',
+  'Zustand',
   'Vue',
-  'Vuex',
-  'Node.js',
+  'Node',
   'Express',
-  'Flask',
+  'Postgres',
   'jQuery',
+  'Azure',
+  'Terraform',
   'Git',
+  'GitHub Actions',
 ];
 
 const qualities = [
@@ -90,11 +94,13 @@ export default function About() {
               turned software developer. It really seems like all of this prior
               experience had led up to this new, exciting career.
             </Typography>
+            <Typography variant="body2" className={classes.textMargin}>
+              I currently work at Self Esteem Brands as a Software Developer primarily focused on frontend development.
+            </Typography>
             <Typography variant="body2">
               I think a lot about my values and what ideas shape me. A guiding
               force in my life is my desire to have an ever-expanding mindset
-              and to never stop learning. Software is never done, so I'm liking
-              where this is going.
+              and to never stop learning. Software is never done, so I'm in a good spot.
             </Typography>
           </Box>
         </Grid>
